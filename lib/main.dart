@@ -32,15 +32,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  Color _myColor = Colors.blue;
 
   void _incrementCounter() {
     setState(() {
+      print('Before increment _counter = $_counter');
       _counter++;
+      print('After increment _counter = $_counter');
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    _myColor = _counter % 4 == 0 ? Colors.yellow : Colors.white;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -48,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: _myColor,
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
@@ -76,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const FruitWidget(),
             const HelloWidget(),
             HelloWidget2(counter: _counter),
             const Text(
@@ -120,5 +126,14 @@ class _HelloWidget2State extends State<HelloWidget2> {
   @override
   Widget build(BuildContext context) {
     return Text('Hello, World! ${widget.counter}');
+  }
+}
+
+class FruitWidget extends StatelessWidget {
+  const FruitWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text('Fruit');
   }
 }
