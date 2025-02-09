@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,24 +31,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Center(
-        child: Text(
-          '長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。',
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          ),
+      body: Center(
+        child: Image.network(
+          'https://img-c.udemycdn.com/user/200_H/229920602_efad_4.jpg',
+          width: 400,
+          height: 400,
         ),
       ),
     );
