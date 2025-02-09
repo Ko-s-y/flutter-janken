@@ -31,109 +31,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  Color _myColor = Colors.blue;
-
-  void _incrementCounter() {
-    setState(() {
-      print('Before increment _counter = $_counter');
-      _counter++;
-      print('After increment _counter = $_counter');
-    });
-  }
-
+  @override
   @override
   Widget build(BuildContext context) {
-    _myColor = _counter % 4 == 0 ? Colors.yellow : Colors.white;
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: _myColor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const FruitWidget(),
-            const HelloWidget(),
-            HelloWidget2(counter: _counter),
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+      body: const Center(
+        child: Text('Hello, World!'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-  }
-}
-
-class HelloWidget extends StatelessWidget {
-  const HelloWidget({super.key});
-
-  @override
-  // 状態を持たないwidget
-  Widget build(BuildContext context) {
-    return const Text('Hello, World!');
-  }
-}
-
-class HelloWidget2 extends StatefulWidget {
-  const HelloWidget2({super.key, required this.counter}); // constを追加
-
-  final int counter; // finalを追加
-
-  @override
-  State<HelloWidget2> createState() => _HelloWidget2State();
-}
-
-class _HelloWidget2State extends State<HelloWidget2> {
-  @override
-  Widget build(BuildContext context) {
-    return Text('Hello, World! ${widget.counter}');
-  }
-}
-
-class FruitWidget extends StatelessWidget {
-  const FruitWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Fruit');
   }
 }
