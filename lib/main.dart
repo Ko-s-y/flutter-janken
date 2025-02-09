@@ -38,24 +38,22 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: TextButton(
+        child: ElevatedButton(
           onPressed: () {
             showDialog(
                 context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: const Text('ダイアログ'),
-                    content: const Text('ダイアログの内容です。'),
-                    actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: const Text('閉じる'),
-                      ),
-                    ],
-                  );
-                });
+                builder: (context) => AlertDialog(
+                      title: const Text('ダイアログ'),
+                      content: const Text('ダイアログの内容です。'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('閉じる'),
+                        ),
+                      ],
+                    ));
           },
           child: const Text('ボタン！おしてね！！'),
         ),
