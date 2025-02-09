@@ -38,26 +38,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            shape: const CircleBorder(),
-            padding: const EdgeInsets.all(34),
-          ),
+        child: OutlinedButton(
           onPressed: () {
-            showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                      title: const Text('ダイアログ'),
-                      content: const Text('ダイアログの内容です。'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text('閉じる'),
-                        ),
-                      ],
-                    ));
+            //
           },
           child: const Text('押してね'),
         ),
