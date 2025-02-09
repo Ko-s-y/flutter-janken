@@ -40,10 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            backgroundColor: Colors.blue,
+            shape: const CircleBorder(),
+            padding: const EdgeInsets.all(34),
           ),
           onPressed: () {
             showDialog(
@@ -61,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ));
           },
-          child: const Text('ボタン！おしてね！！'),
+          child: const Text('押してね'),
         ),
       ),
     );
