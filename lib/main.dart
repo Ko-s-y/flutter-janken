@@ -37,7 +37,27 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                      title: const Text('ロボットくん'),
+                      content: const Text('パーです'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text('閉じる'),
+                        ),
+                      ],
+                    ));
+          },
+          child: const Text('じゃんけん'),
+        ),
+      ),
     );
   }
 }
