@@ -37,11 +37,17 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Image.asset(
-          'assets/cat.jpeg',
-          width: 400,
-          height: 400,
+      body: Container(
+        color: Colors.blue,
+        child: const Padding(
+          padding: EdgeInsets.only(
+              left: 24,
+              right: 24,
+              top: 24,
+              bottom:
+                  24), // EdgeInsets.all(24), EdgeInsets.symmetric(horizontal: 24, vertical: 24), EdgeInsets.zero
+          child: Text(
+              '長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章長い文章'),
         ),
       ),
     );
