@@ -31,16 +31,28 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   void showRobotResult() {
-    List<String> hands = ['assets/gu.png', 'assets/choki.png', 'assets/pa.png'];
+    List<String> hands = ['グー', 'チョキ', 'パー'];
     hands.shuffle();
     String hand = hands.first;
+
+    String imagePath = '';
+    if (hand == 'グー') {
+      imagePath = 'assets/gu.png';
+    } else if (hand == 'チョキ') {
+      imagePath = 'assets/choki.png';
+    } else if (hand == 'パー') {
+      imagePath = 'assets/pa.png';
+    } else {
+      imagePath = '';
+    }
+    Image image = Image.asset(imagePath);
 
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: const Text('ロボットくん'),
-            content: Image.asset(hand),
+            content: image,
             actions: [
               TextButton(
                   onPressed: () {
