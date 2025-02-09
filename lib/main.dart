@@ -37,14 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: OutlinedButton(
-          onPressed: () {
-            //
-          },
-          child: const Text('押してね'),
-        ),
-      ),
+      body: Center(),
     );
   }
 }
