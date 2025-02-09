@@ -30,15 +30,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String hand = 'パー';
-
   void showRobotResult() {
+    List<String> hands = ['グー', 'チョキ', 'パー'];
+    hands.shuffle();
+    String hand = hands.first;
+
     showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
             title: const Text('ロボットくん'),
-            content: Text('$handです'),
+            content: Text('「$hand」です'),
             actions: [
               TextButton(
                   onPressed: () {
