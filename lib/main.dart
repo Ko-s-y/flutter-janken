@@ -30,6 +30,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String hand = 'パー';
+
+  void showRobotResult() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('ロボットくん'),
+            content: Text('$handです'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('閉じる')),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,20 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                      title: const Text('ロボットくん'),
-                      content: const Text('パーです'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text('閉じる'),
-                        ),
-                      ],
-                    ));
+            showRobotResult();
           },
           child: const Text('じゃんけん'),
         ),
