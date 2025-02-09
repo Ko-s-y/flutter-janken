@@ -40,8 +40,22 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: TextButton(
           onPressed: () {
-            // ここにボタンを押したときの処理を記載する
-            print('ボタンを押しました');
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: const Text('ダイアログ'),
+                    content: const Text('ダイアログの内容です。'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Text('閉じる'),
+                      ),
+                    ],
+                  );
+                });
           },
           child: const Text('ボタン！おしてね！！'),
         ),
