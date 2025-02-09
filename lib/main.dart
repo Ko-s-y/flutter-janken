@@ -38,8 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Image.network(
-          'https://img-c.udemycdn.com/user/200_H/229920602_efad_4.jpg',
+        child: Image.asset(
+          'assets/cat.jpeg',
           width: 400,
           height: 400,
         ),
