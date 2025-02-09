@@ -37,12 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(24),
-        child: Align(
-          alignment: Alignment
-              .bottomLeft, // centerLeft, centerRight, centerTop, centerBottom, topLeft, topRight, bottomLeft, bottomRight, bottomCenter, topCenter, center
-          child: Text('文章です。'),
+      body: Center(
+        child: TextButton(
+          onPressed: () {
+            // ここにボタンを押したときの処理を記載する
+            print('ボタンを押しました');
+          },
+          child: const Text('ボタン！おしてね！！'),
         ),
       ),
     );
