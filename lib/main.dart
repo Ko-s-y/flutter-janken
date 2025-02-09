@@ -45,6 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
           '長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.blue,
+          ),
         ),
       ),
     );
