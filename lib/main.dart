@@ -41,7 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: const Center(
-        child: Text('Hello, World!'),
+        child: Text(
+          '長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。長い文章を書く。',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     );
   }
