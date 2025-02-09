@@ -37,17 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: const Column(
-        children: [
-          ColoredBox(
-            color: Color.fromARGB(255, 255, 0, 0),
-            child: Text('文章です。'),
-          ),
-          ColoredBox(
-            color: Colors.red, // MaterialColor
-            child: Text('文章です。'),
-          ),
-        ],
+      body: const Padding(
+        padding: EdgeInsets.all(24),
+        child: Align(
+          alignment: Alignment
+              .bottomLeft, // centerLeft, centerRight, centerTop, centerBottom, topLeft, topRight, bottomLeft, bottomRight, bottomCenter, topCenter, center
+          child: Text('文章です。'),
+        ),
       ),
     );
   }
