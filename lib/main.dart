@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   void showRobotResult() {
-    List<String> hands = ['グー', 'チョキ', 'パー'];
+    List<String> hands = ['assets/gu.png', 'assets/choki.png', 'assets/pa.png'];
     hands.shuffle();
     String hand = hands.first;
 
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context) {
           return AlertDialog(
             title: const Text('ロボットくん'),
-            content: Text('「$hand」です'),
+            content: Image.asset(hand),
             actions: [
               TextButton(
                   onPressed: () {
