@@ -1,4 +1,4 @@
-# stopwatch
+# janken
 
 A new Flutter project.
 
